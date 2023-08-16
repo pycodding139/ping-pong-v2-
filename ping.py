@@ -27,17 +27,26 @@ class PongGame:
 
         self.update()
 
-    def move_paddle_a_up(self, event):
-        self.canvas.move(self.paddle_a, 0, -20)
-
+     def move_paddle_a_up(self, event):
+        paddle_a_pos = self.canvas.coords(self.paddle_a)
+        if paddle_a_pos[1] > 0:
+            self.canvas.move(self.paddle_a, 0, -20)
+        
     def move_paddle_a_down(self, event):
-        self.canvas.move(self.paddle_a, 0, 20)
+        paddle_a_pos = self.canvas.coords(self.paddle_a)
+        if paddle_a_pos[3] < 300:
+            self.canvas.move(self.paddle_a, 0, 20)
 
     def move_paddle_b_up(self, event):
-        self.canvas.move(self.paddle_b, 0, -20)
+        paddle_b_pos = self.canvas.coords(self.paddle_b)
+        if paddle_b_pos[1] > 0:
+            self.canvas.move(self.paddle_b, 0, -20)
 
     def move_paddle_b_down(self, event):
-        self.canvas.move(self.paddle_b, 0, 20)
+        paddle_b_pos = self.canvas.coords(self.paddle_b)
+        if paddle_b_pos[3] < 300:
+            self.canvas.move(self.paddle_b, 0, 20)
+
 
     def update(self):
         self.canvas.move(self.ball, self.ball_speed_x, self.ball_speed_y)
