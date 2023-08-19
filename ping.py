@@ -6,7 +6,7 @@ class PongGame:
         self.root = root
         self.root.title("Пинг-Понг")
 
-        self.canvas = tk.Canvas(root, width=500, height=300, bg="black")
+        self.canvas = tk.Canvas(root, width=1500, height=900, bg="black")
         self.canvas.pack()
 
         self.paddle_a = self.canvas.create_rectangle(50, 150, 70, 200, fill="white")
